@@ -23,6 +23,7 @@ import {
   Label,
 } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import clsx from 'clsx'
 import { useState } from 'react'
 import medSchoolData, {
   classCategories,
@@ -210,11 +211,16 @@ export default function Example() {
                                 <div>
                                   {notesArray.map((note) => {
                                     return (
-                                      <div key={note.schoolName}>
+                                      <div
+                                        className="pl-2"
+                                        key={note.schoolName}
+                                      >
                                         <span className="font-semibold">
-                                          {note.schoolName + ':'}
+                                          {note.schoolName + ': '}
                                         </span>
-                                        <span>{note.notes}</span>
+                                        <span className="font-light">
+                                          {note.notes}
+                                        </span>
                                       </div>
                                     )
                                   })}
@@ -240,9 +246,23 @@ export default function Example() {
   )
 }
 
-export function Pill({ title }: { title: string }) {
+export function Pill({
+  title,
+  color,
+  tooltip,
+}: {
+  title: string
+  color: 'green' | 'yellow'
+  tooltip: string
+}) {
   return (
-    <span className="m-1 inline-flex items-center gap-x-0.5 rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-gray-600">
+    <span
+      title={tooltip}
+      className={clsx(
+        'm-1 inline-flex items-center gap-x-0.5 rounded-md px-2 py-1 text-xs font-medium text-gray-600',
+        color == 'green' ? 'bg-green-400' : 'bg-yellow-400',
+      )}
+    >
       {title}
     </span>
   )
