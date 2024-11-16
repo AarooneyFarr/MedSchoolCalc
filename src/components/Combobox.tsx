@@ -71,7 +71,7 @@ export default function Example() {
           setSelectedSchools(person)
         }}
       >
-        <Label className="block text-xl font-bold text-white">
+        <Label className="block text-xl font-bold text-gray-900">
           What Medical Schools are you interested in?{' '}
         </Label>
         <div className="relative mt-2">
@@ -109,148 +109,138 @@ export default function Example() {
           )}
         </div>
       </Combobox>
-      <h1 className="block pt-5 text-xl font-bold text-gray-900">
-        Selected Schools
-      </h1>
-      {selectedSchools.map((school: any, index) => {
-        return (
-          <span
-            key={index}
-            className="m-1 inline-flex items-center gap-x-0.5 rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-gray-600"
-          >
-            {school.name}
-            <button
-              type="button"
-              className="group relative -mr-1 size-3.5 rounded-sm hover:bg-gray-500/20"
-              onClick={() => {
-                setSelectedSchools((e: any) =>
-                  e.filter((val: any) => val.name != school.name),
-                )
-              }}
-            >
-              <span className="sr-only">Remove</span>
-              <svg
-                viewBox="0 0 14 14"
-                className="size-3.5 stroke-gray-700/50 group-hover:stroke-gray-700/75"
+      {selectedSchools.length > 0 && (
+        <div>
+          <h1 className="block pt-5 text-xl font-bold text-gray-900">
+            Selected Schools
+          </h1>
+          {selectedSchools.map((school: any, index) => {
+            return (
+              <span
+                key={index}
+                className="m-1 inline-flex items-center gap-x-0.5 rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-gray-600"
               >
-                <path d="M4 4l6 6m0-6l-6 6" />
-              </svg>
-              <span className="absolute -inset-1" />
-            </button>
-          </span>
-        )
-      })}
-      <h1 className="block pb-5 pt-12 text-5xl font-bold text-gray-900">
-        Required Courses
-      </h1>
-      {Object.keys(classCategories).map((cat: string) => {
-        return (
-          <div key={cat} className="border-1 m-2 rounded-md p-4">
-            <div className="text-3xl font-bold uppercase text-gray-900">
-              {cat}
-            </div>{' '}
-            <div className="grid">
-              {Array.from(requiredClassSet).map((className, index) => {
-                const schoolSet = requiredClassMap.get(className)!
-                const schoolsThatRequire: string[] = []
-                const schoolsThatRec: string[] = []
-                const notesArray: { schoolName: string; notes: string }[] = []
-                const schoolClassArray = []
+                {school.name}
+                <button
+                  type="button"
+                  className="group relative -mr-1 size-3.5 rounded-sm hover:bg-gray-500/20"
+                  onClick={() => {
+                    setSelectedSchools((e: any) =>
+                      e.filter((val: any) => val.name != school.name),
+                    )
+                  }}
+                >
+                  <span className="sr-only">Remove</span>
+                  <svg
+                    viewBox="0 0 14 14"
+                    className="size-3.5 stroke-gray-700/50 group-hover:stroke-gray-700/75"
+                  >
+                    <path d="M4 4l6 6m0-6l-6 6" />
+                  </svg>
+                  <span className="absolute -inset-1" />
+                </button>
+              </span>
+            )
+          })}
+          <h1 className="block pb-5 pt-12 text-5xl font-bold text-gray-900">
+            Required Courses
+          </h1>
+          {Object.keys(classCategories).map((cat: string) => {
+            return (
+              <div key={cat} className="border-1 m-2 rounded-md p-4">
+                <div className="text-3xl font-bold uppercase text-gray-900">
+                  {cat}
+                </div>{' '}
+                <div className="grid">
+                  {Array.from(requiredClassSet).map((className, index) => {
+                    const schoolSet = requiredClassMap.get(className)!
+                    const schoolsThatRequire: string[] = []
+                    const schoolsThatRec: string[] = []
+                    const notesArray: { schoolName: string; notes: string }[] =
+                      []
+                    const schoolClassArray = []
 
-                Array.from(schoolSet).forEach((schoolName) => {
-                  const school = selectedSchools.find(
-                    (school) => school.name == schoolName,
-                  )!
+                    Array.from(schoolSet).forEach((schoolName) => {
+                      const school = selectedSchools.find(
+                        (school) => school.name == schoolName,
+                      )!
 
-                  const c = school.requiredClasses.find(
-                    (c) => c.name == className,
-                  )
-                  if (c?.required == 'yes') {
-                    schoolsThatRequire.push(school.name)
-                  }
-                  if (c?.required == 'recommended') {
-                    schoolsThatRec.push(school.name)
-                  }
-                  if (c) {
-                    schoolClassArray.push(c)
-                    if (c.notes) {
-                      notesArray.push({
-                        schoolName: schoolName,
-                        notes: c.notes,
-                      })
-                    }
-                  }
-                })
-
-                if (schoolsThatRequire.length == 0) return null
-                if (
-                  !classCategories[cat].find(
-                    (classTitle) => className == classTitle,
-                  )
-                )
-                  return null
-
-                return (
-                  <div key={index} className="">
-                    <div className="p-2">
-                      <Card
-                        title={
-                          <div className="flex flex-row justify-between">
-                            <span>{className}</span>
-                            <div className="flex flex-col">
-                              <div className="flex flex-row">
-                                <h2 className="text-lg font-bold">Required:</h2>
-                                {schoolsThatRequire.map((school) => {
-                                  return <Pill key={school} title={school} />
-                                })}
-                              </div>
-                              <div className="flex flex-row">
-                                {' '}
-                                <h2 className="text-lg font-bold">
-                                  Recommended:
-                                </h2>
-                                {schoolsThatRec.map((school) => {
-                                  return <Pill key={school} title={school} />
-                                })}
-                              </div>
-                            </div>
-                          </div>
+                      const c = school.requiredClasses.find(
+                        (c) => c.name == className,
+                      )
+                      if (c?.required == 'yes') {
+                        schoolsThatRequire.push(school.name)
+                      }
+                      if (c?.required == 'recommended') {
+                        schoolsThatRec.push(school.name)
+                      }
+                      if (c) {
+                        schoolClassArray.push(c)
+                        if (c.notes) {
+                          notesArray.push({
+                            schoolName: schoolName,
+                            notes: c.notes,
+                          })
                         }
-                        description={
-                          <div>
-                            <h2 className="text-lg font-bold">Notes:</h2>
-                            <div>
-                              {notesArray.map((note) => {
-                                return (
-                                  <div key={note.schoolName}>
-                                    <span className="font-semibold">
-                                      {note.schoolName + ':'}
-                                    </span>
-                                    <span>{note.notes}</span>
-                                  </div>
-                                )
-                              })}
-                            </div>
-                            <h2 className="text-lg font-bold">Required by:</h2>
+                      }
+                    })
+
+                    if (
+                      schoolsThatRequire.length == 0 &&
+                      schoolsThatRec.length == 0
+                    )
+                      return null
+                    if (
+                      !classCategories[cat].find(
+                        (classTitle) => className == classTitle,
+                      )
+                    )
+                      return null
+
+                    return (
+                      <div key={index} className="">
+                        <div className="p-2">
+                          <Card
+                            title={className}
+                            rec={schoolsThatRec}
+                            req={schoolsThatRequire}
+                            description={
+                              <div>
+                                <h2 className="text-lg font-bold">Notes:</h2>
+                                <div>
+                                  {notesArray.map((note) => {
+                                    return (
+                                      <div key={note.schoolName}>
+                                        <span className="font-semibold">
+                                          {note.schoolName + ':'}
+                                        </span>
+                                        <span>{note.notes}</span>
+                                      </div>
+                                    )
+                                  })}
+                                </div>
+                                {/* <h2 className="text-lg font-bold">Required by:</h2>
                             {schoolsThatRequire.map((school) => {
                               return <Pill key={school} title={school} />
-                            })}
-                          </div>
-                        }
-                      />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        )
-      })}
+                            })} */}
+                              </div>
+                            }
+                          />
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
 
-function Pill({ title }: { title: string }) {
+export function Pill({ title }: { title: string }) {
   return (
     <span className="m-1 inline-flex items-center gap-x-0.5 rounded-md bg-blue-100 px-2 py-1 text-xs font-medium text-gray-600">
       {title}

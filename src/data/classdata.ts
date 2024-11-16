@@ -51,7 +51,7 @@ export const classCategories: { [key: string]: string[] } = {
 
 const medSchoolData: MedSchool[] = [
   {
-    name: 'Harvard Medical School',
+    name: 'Harvard',
     generalNotes:
       'Strong emphasis on research experience and upper-level science coursework. AP credits accepted for some introductory courses but upper-level coursework in same department recommended.',
     requiredClasses: [
@@ -193,7 +193,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'Stanford University School of Medicine',
+    name: 'Stanford',
     generalNotes:
       'No strict requirements, but strong emphasis on research experience and diversity of academic pursuits.',
     requiredClasses: [
@@ -326,7 +326,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'Johns Hopkins School of Medicine',
+    name: 'Johns Hopkins',
     generalNotes:
       'Highly research-focused with an emphasis on interdisciplinary studies. Encourages coursework in humanities and social sciences.',
     requiredClasses: [
@@ -465,7 +465,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'Yale University School of Medicine',
+    name: 'Yale',
     generalNotes:
       'Strong focus on research and interdisciplinary studies. Laboratory courses emphasized for most science prerequisites.',
     requiredClasses: [
@@ -595,7 +595,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'University of Pennsylvania Perelman School of Medicine',
+    name: 'UPenn',
     generalNotes:
       'Emphasizes foundational science coursework with a strong focus on research and clinical preparation.',
     requiredClasses: [
@@ -729,7 +729,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'Vanderbilt University School of Medicine',
+    name: 'Vanderbilt',
     generalNotes:
       'Focus on rigorous foundational science coursework with opportunities for interdisciplinary studies. Research experience highly valued.',
     requiredClasses: [
@@ -862,7 +862,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'University of Washington School of Medicine',
+    name: 'U-Washington',
     generalNotes: '',
     requiredClasses: [
       {
@@ -963,7 +963,7 @@ const medSchoolData: MedSchool[] = [
     ],
   },
   {
-    name: 'David Geffen School of Medicine (UCLA)',
+    name: 'UCLA',
     generalNotes: '',
     requiredClasses: [
       {
