@@ -241,7 +241,7 @@ export default function Example() {
               </div>
             )
           })}
-          <Leland />
+          <Leland names={selectedSchools.map(school => school.name)} />
         </div>
       )}
     </div>
@@ -270,39 +270,66 @@ export function Pill({
   )
 }
 
-function Leland() {
+function Leland({names}: {names: string[]}) {
   return (
     <div>
-      {/*building a call to action at the bottom of the app to drive traffic to schedule appointments*/}
-      <div className="">
+      {/* Building a call to action at the bottom of the app to drive traffic to schedule appointments */}
+      <div className="text-center px-4">
+        {/* Main Heading */}
         <p className="pt-7 text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl">
           Let us help you plan your path to medical school
         </p>
-        <div>
-          {/*a list of images in a row showing "professionals associated with Leland*/}
-          <p className="text-s pt-7 font-semibold text-gray-900">
-            Meet with one of our many professionals that graduated from one of
-            these schools.
-          </p>
-          <div className="flex flex-row gap-4 pt-4">
+
+        {/* Subheading */}
+        <p className="text-sm pt-7 font-semibold text-gray-900">
+          Meet with one of our many professionals that graduated from one of
+          these schools.
+        </p>
+
+        <div className="flex flex-row justify-center gap-9 pt-4 flex-wrap">
+        {/* Cards Section */}
+        {names.map(name => {
+          return (
+          <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
             <img
               src="/team/prof_woman1.png"
-              className="h-32 w-32 rounded-full"
+              className="h-32 w-32 rounded-full mx-auto"
             />
-            <img src="/team/prof-man1.png" className="h-32 w-32 rounded-full" />
-            <img
-              src="/team/prof-woman2.png"
-              className="h-32 w-32 rounded-full"
-            />
-            <img src="/team/prof-man2.png" className="h-32 w-32 rounded-full" />
+            <p className="mt-4 text-sm font-semibold">{name}</p>
           </div>
+          )
+        })}
+          {/* Card 2
+          <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
+            <img
+              src="/team/prof-man1.png"
+              className="h-32 w-32 rounded-full mx-auto"
+            />
+            <p className="mt-4 text-sm font-semibold">Harvard</p>
+          </div>
+          <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
+            <img
+              src="/team/prof_woman2.png"
+              className="h-32 w-32 rounded-full mx-auto"
+            />
+            <p className="mt-4 text-sm font-semibold">Harvard</p>
+          </div>
+          <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
+            <img
+              src="/team/prof-man2.png"
+              className="h-32 w-32 rounded-full mx-auto"
+            />
+            <p className="mt-4 text-sm font-semibold">Harvard</p>
+          </div> */}
         </div>
-        <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-          <Button href="/schedule" className="bg-[#14B077]">
+
+        {/* Call-to-Action Button */}
+        <div className="mt-12">
+          <Button href="/schedule" className="bg-[#14B077] text-white px-4 py-2 rounded-md shadow-lg">
             Schedule an appointment
           </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
