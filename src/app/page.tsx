@@ -9,6 +9,7 @@ import { Screenshot } from '@/components/screenshot'
 import { Heading, Subheading } from '@/components/text'
 import type { Metadata } from 'next'
 import Combobox from '../components/Combobox'
+import { Button } from '@/components/button'
 
 export const metadata: Metadata = {
   description:
@@ -38,10 +39,31 @@ function Hero() {
           <div className="pt-12">
             <Combobox />
           </div>
-          {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Radiant helps you sell more by revealing sensitive information about
-            your customers.
-          </p> */}
+
+          <div>
+            {/*building a call to action at the bottom of the app to drive traffic to schedule appointments*/}
+            <div className ="" >
+              <p className="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl pt-7">
+                Let us help you plan your path to medical school
+              </p>
+              <div>
+                {/*a list of images in a row showing "professionals associated with Leland*/}
+              <p className="">
+                Meet with one of our many professionals that graduated from one of these schools.
+              </p>
+              <div className="flex flex-row gap-4 pt-4">
+                  <img src="/team/prof_woman1.png" className="rounded-full h-14 w-14" />
+                  <img src="/team/prof-man1.png" className="rounded-full h-14 w-14" />
+                  <img src="/team/prof-woman2.png" className="rounded-full h-14 w-14" />
+                  <img src="/team/prof-man2.png" className="rounded-full h-14 w-14" />
+              </div>
+            </div>
+            <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row" >
+              <Button href="/schedule">Schedule an appointment</Button>
+            </div>
+          </div>
+        </div>
+          
           {/* <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="#">Get started</Button>
             <Button variant="secondary" href="/pricing">
