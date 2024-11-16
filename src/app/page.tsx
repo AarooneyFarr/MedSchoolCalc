@@ -9,6 +9,7 @@ import { Screenshot } from '@/components/screenshot'
 import { Heading, Subheading } from '@/components/text'
 import type { Metadata } from 'next'
 import Combobox from '../components/Combobox'
+import { Button } from '@/components/button'
 
 export const metadata: Metadata = {
   description:
@@ -38,7 +39,6 @@ function Hero() {
           <div className="pt-24">
             <Combobox />
           </div>
-          <div className="m-1"> </div>
           {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
             Radiant helps you sell more by revealing sensitive information about
             your customers.
