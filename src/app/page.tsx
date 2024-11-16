@@ -13,8 +13,7 @@ import Combobox from '../components/Combobox'
 import { Button } from '../components/button'
 
 export const metadata: Metadata = {
-  description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
+  description: 'Leland is cool',
 }
 
 function Hero() {
