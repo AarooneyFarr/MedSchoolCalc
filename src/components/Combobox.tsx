@@ -290,7 +290,10 @@ function Leland({ names }: { names: string[] }) {
           {/* Cards Section */}
           {names.map((name) => {
             return (
-              <div className="w-40 rounded-lg border-2 p-4 text-center shadow-lg">
+              <div
+                key={name}
+                className="w-40 rounded-lg border-2 p-4 text-center shadow-lg"
+              >
                 <img
                   src="/team/prof_woman1.png"
                   className="mx-auto h-32 w-32 rounded-full"
