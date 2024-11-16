@@ -1,20 +1,20 @@
 type ClassName =
-  | 'Gen Bio 1'
-  | 'Gen Bio 2'
+  | 'General Biology 1'
+  | 'General Biology 2'
   | 'Genetics'
-  | 'Cell Bio'
+  | 'Cell Biology'
   | 'Physiology'
-  | 'Gen Chem 1'
-  | 'Gen Chem 2'
+  | 'General Chemistry 1'
+  | 'General Chemistry 2'
   | 'Organic Chem 1'
   | 'Organic Chem 2'
-  | 'Biochem'
+  | 'Biochemistry'
   | 'Physics 1'
   | 'Physics 2'
   | 'English Comp'
   | 'English Lit'
-  | 'Calc 1'
-  | 'Calc 2'
+  | 'Calculus 1'
+  | 'Calculus 2'
   | 'Statistics'
   | 'Psychology'
   | 'Sociology'
@@ -36,17 +36,23 @@ export interface MedSchool {
 }
 
 export const classCategories: { [key: string]: string[] } = {
-  Biology: ['Gen Bio 1', 'Gen Bio 2', 'Genetics', 'Cell Bio', 'Physiology'],
+  Biology: [
+    'General Biology 1',
+    'General Biology 2',
+    'Genetics',
+    'Cell Biology',
+    'Physiology',
+  ],
   Chemistry: [
-    'Gen Chem 1',
-    'Gen Chem 2',
+    'General Chemistry 1',
+    'General Chemistry 2',
     'Organic Chem 1',
     'Organic Chem 2',
-    'Biochem',
+    'Biochemistry',
   ],
   Physics: ['Physics 1', 'Physics 2'],
   Humanities: ['English Comp', 'English Lit', 'Psychology', 'Sociology'],
-  Math: ['Calc 1', 'Calc 2', 'Statistics'],
+  Math: ['Calculus 1', 'Calculus 2', 'Statistics'],
 }
 
 const medSchoolData: MedSchool[] = [
@@ -56,7 +62,7 @@ const medSchoolData: MedSchool[] = [
       'Strong emphasis on research experience and upper-level science coursework. AP credits accepted for some introductory courses but upper-level coursework in same department recommended.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         notes:
           'First semester of a two-part introductory biology sequence. Must include cellular and molecular biology topics.',
@@ -64,7 +70,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         notes:
           'Second semester biology covering organismal biology and genetics.',
@@ -79,7 +85,7 @@ const medSchoolData: MedSchool[] = [
         alternateOptions: ['Molecular genetics', 'Human genetics'],
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'recommended',
         notes: 'Advanced course in cell biology with molecular emphasis.',
         labRequired: false,
@@ -91,7 +97,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         notes:
           'First semester general chemistry covering atomic structure, bonding, and basic reactions.',
@@ -99,7 +105,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         notes:
           'Second semester general chemistry covering equilibrium, thermodynamics, and acid-base chemistry.',
@@ -123,7 +129,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         notes:
           'One semester biochemistry covering metabolism and molecular biology.',
@@ -160,13 +166,13 @@ const medSchoolData: MedSchool[] = [
         alternateOptions: ['Comparative literature', 'World literature'],
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'yes',
         notes: 'Single variable calculus covering derivatives and integrals.',
         apAccepted: true,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'recommended',
         notes: 'Recommended for students interested in research.',
         apAccepted: true,
@@ -198,7 +204,7 @@ const medSchoolData: MedSchool[] = [
       'No strict requirements, but strong emphasis on research experience and diversity of academic pursuits.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'recommended',
         notes:
           'First semester biology with emphasis on molecular and cellular processes.',
@@ -206,7 +212,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: true,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'recommended',
         notes: 'Second semester biology with emphasis on organismal biology.',
         labRequired: true,
@@ -220,7 +226,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'recommended',
         notes:
           'Recommended course with emphasis on molecular biology and cellular processes.',
@@ -233,14 +239,14 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'recommended',
         notes: 'Basic principles of chemistry with lab work.',
         labRequired: true,
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'recommended',
         notes:
           'Advanced principles of chemistry including equilibrium and thermodynamics.',
@@ -260,10 +266,10 @@ const medSchoolData: MedSchool[] = [
         notes:
           'Recommended but not required. Can be substituted with biochemistry.',
         labRequired: false,
-        alternateOptions: ['Biochem'],
+        alternateOptions: ['Biochemistry'],
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'recommended',
         notes:
           'One semester of biochemistry required. Lab component recommended.',
@@ -302,12 +308,12 @@ const medSchoolData: MedSchool[] = [
         notes: 'Recommended for developing strong communication skills.',
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'no',
         notes: 'Not required.',
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'recommended',
         notes: 'Recommended for students interested in quantitative sciences.',
       },
@@ -331,7 +337,7 @@ const medSchoolData: MedSchool[] = [
       'Highly research-focused with an emphasis on interdisciplinary studies. Encourages coursework in humanities and social sciences.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         notes:
           'Introductory biology emphasizing molecular and cellular processes.',
@@ -339,10 +345,10 @@ const medSchoolData: MedSchool[] = [
         apAccepted: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         notes:
-          'Continuation of Gen Bio 1, covering organismal biology and systems.',
+          'Continuation of General Biology 1, covering organismal biology and systems.',
         labRequired: true,
         apAccepted: false,
       },
@@ -354,7 +360,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'no',
         notes:
           'Not required but may be beneficial for deeper understanding of biology.',
@@ -368,7 +374,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         notes:
           'General chemistry with a focus on molecular interactions and reactivity.',
@@ -376,7 +382,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         notes: 'Second semester of general chemistry covering advanced topics.',
         labRequired: true,
@@ -398,7 +404,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         notes:
           'Advanced biochemistry focusing on molecular biology and metabolism.',
@@ -431,13 +437,13 @@ const medSchoolData: MedSchool[] = [
           'Recommended to develop strong analytical and communication skills.',
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'no',
         notes:
           'Not required but may be helpful for students interested in quantitative sciences.',
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'recommended',
         notes:
           'Recommended for students interested in quantitative sciences or research.',
@@ -470,14 +476,14 @@ const medSchoolData: MedSchool[] = [
       'Strong focus on research and interdisciplinary studies. Laboratory courses emphasized for most science prerequisites.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         notes: 'Introductory biology with a lab component required.',
         labRequired: true,
         apAccepted: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         notes:
           'Continuation of introductory biology with emphasis on organismal biology. Lab component required.',
@@ -490,7 +496,7 @@ const medSchoolData: MedSchool[] = [
         notes: 'Not required.',
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'no',
         notes: 'Not required.',
       },
@@ -500,14 +506,14 @@ const medSchoolData: MedSchool[] = [
         notes: 'Not required.',
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         notes: 'General chemistry with a lab component required.',
         labRequired: true,
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         notes:
           'Second semester of general chemistry with a lab component required.',
@@ -529,12 +535,12 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         notes:
           'One semester of biochemistry recommended. Lab component is encouraged.',
         labRequired: true,
-        alternateOptions: ['Advanced Biochemistry'],
+        alternateOptions: ['Advanced Biochemistryistry'],
       },
       {
         name: 'Physics 1',
@@ -564,13 +570,13 @@ const medSchoolData: MedSchool[] = [
           'Not required but may be beneficial for developing analytical skills.',
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'yes',
         notes: 'Single variable calculus covering derivatives and integrals.',
         apAccepted: true,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'no',
         notes:
           'Not required but recommended for students interested in quantitative sciences.',
@@ -600,7 +606,7 @@ const medSchoolData: MedSchool[] = [
       'Emphasizes foundational science coursework with a strong focus on research and clinical preparation.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         notes:
           'Introductory biology with emphasis on molecular and cellular biology.',
@@ -608,7 +614,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         notes:
           'Continuation of introductory biology, focusing on organismal biology and systems.',
@@ -622,7 +628,7 @@ const medSchoolData: MedSchool[] = [
           'Not required but may provide additional depth in biological sciences.',
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'no',
         notes: 'Not required.',
       },
@@ -633,7 +639,7 @@ const medSchoolData: MedSchool[] = [
           'Not required but may be beneficial for students interested in human systems.',
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         notes:
           'Introductory general chemistry focusing on atomic structure, bonding, and basic reactions.',
@@ -641,7 +647,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         notes:
           'Second semester of general chemistry covering equilibrium, thermodynamics, and acid-base reactions.',
@@ -663,7 +669,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         notes:
           'One semester of biochemistry focusing on molecular biology and metabolism.',
@@ -698,13 +704,13 @@ const medSchoolData: MedSchool[] = [
           'Not required but may be beneficial for strengthening communication skills.',
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'yes',
         notes: 'Single-variable calculus covering derivatives and integrals.',
         apAccepted: true,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'no',
         notes:
           'Not required but recommended for students interested in research or quantitative sciences.',
@@ -734,14 +740,14 @@ const medSchoolData: MedSchool[] = [
       'Focus on rigorous foundational science coursework with opportunities for interdisciplinary studies. Research experience highly valued.',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         notes: 'Introductory biology covering molecular and cellular biology.',
         labRequired: true,
         apAccepted: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         notes:
           'Continuation of introductory biology, focusing on organismal biology and systems.',
@@ -755,7 +761,7 @@ const medSchoolData: MedSchool[] = [
           'Not required but may provide additional depth in biological sciences.',
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'no',
         notes: 'Not required.',
       },
@@ -766,7 +772,7 @@ const medSchoolData: MedSchool[] = [
           'Not required but may be beneficial for students interested in human systems.',
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         notes:
           'General chemistry focusing on atomic structure, bonding, and basic reactions.',
@@ -774,7 +780,7 @@ const medSchoolData: MedSchool[] = [
         apAccepted: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         notes:
           'Second semester of general chemistry covering equilibrium, thermodynamics, and acid-base reactions.',
@@ -796,7 +802,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         notes:
           'One semester of biochemistry focusing on molecular biology and metabolism.',
@@ -831,13 +837,13 @@ const medSchoolData: MedSchool[] = [
           'Not required but may be beneficial for strengthening communication skills.',
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'yes',
         notes: 'Single-variable calculus covering derivatives and integrals.',
         apAccepted: true,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'no',
         notes:
           'Not required but recommended for students interested in research or quantitative sciences.',
@@ -866,12 +872,12 @@ const medSchoolData: MedSchool[] = [
     generalNotes: '',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'yes',
         labRequired: true,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'yes',
         labRequired: true,
       },
@@ -881,7 +887,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'recommended',
         labRequired: false,
       },
@@ -891,12 +897,12 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'yes',
         labRequired: true,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'yes',
         labRequired: true,
       },
@@ -911,7 +917,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'yes',
         labRequired: false,
       },
@@ -936,12 +942,12 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'yes',
         labRequired: false,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'no',
         labRequired: false,
       },
@@ -967,12 +973,12 @@ const medSchoolData: MedSchool[] = [
     generalNotes: '',
     requiredClasses: [
       {
-        name: 'Gen Bio 1',
+        name: 'General Biology 1',
         required: 'recommended',
         labRequired: false,
       },
       {
-        name: 'Gen Bio 2',
+        name: 'General Biology 2',
         required: 'recommended',
         labRequired: false,
       },
@@ -982,7 +988,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Cell Bio',
+        name: 'Cell Biology',
         required: 'recommended',
         labRequired: false,
       },
@@ -992,12 +998,12 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Gen Chem 1',
+        name: 'General Chemistry 1',
         required: 'recommended',
         labRequired: false,
       },
       {
-        name: 'Gen Chem 2',
+        name: 'General Chemistry 2',
         required: 'recommended',
         labRequired: false,
       },
@@ -1012,7 +1018,7 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Biochem',
+        name: 'Biochemistry',
         required: 'recommended',
         labRequired: false,
       },
@@ -1037,12 +1043,12 @@ const medSchoolData: MedSchool[] = [
         labRequired: false,
       },
       {
-        name: 'Calc 1',
+        name: 'Calculus 1',
         required: 'recommended',
         labRequired: false,
       },
       {
-        name: 'Calc 2',
+        name: 'Calculus 2',
         required: 'no',
         labRequired: false,
       },
