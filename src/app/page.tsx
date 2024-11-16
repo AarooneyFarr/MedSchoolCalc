@@ -35,7 +35,7 @@ function Hero() {
           <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-900 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
             Pre-med course planner
           </h1>
-          <div className="pt-12">
+          <div className="pt-24">
             <Combobox />
           </div>
           <div className="m-1"> </div>
