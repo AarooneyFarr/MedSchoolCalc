@@ -1,4 +1,4 @@
-import { ChevronUpIcon } from '@heroicons/react/16/solid'
+import { ChevronRightIcon } from '@heroicons/react/16/solid'
 import clsx from 'clsx'
 import { useState } from 'react'
 import { Pill } from './Combobox'
@@ -21,10 +21,10 @@ export default function Card({
       <div className="w-full divide-y divide-gray-200">
         <div className="flex">
           <div onClick={() => setOpen(!open)}>
-            <ChevronUpIcon
+            <ChevronRightIcon
               className={clsx(
                 'size-12 fill-slate-900 px-2',
-                open ? 'rotate-180' : '',
+                open ? 'rotate-90' : '',
               )}
             />
           </div>

@@ -288,18 +288,21 @@ function Leland({ names }: { names: string[] }) {
 
         <div className="flex flex-row flex-wrap justify-center gap-9 pt-4">
           {/* Cards Section */}
-          {/* {names.map(name => {
-          return (
-          <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
-            <img
-              src="/team/prof_woman1.png"
-              className="h-32 w-32 rounded-full mx-auto"
-            />
-            <p className="mt-4 text-sm font-semibold">{name}</p>
-          </div>
-          )
-        })} */}
-          <img src="/team/pros.png" className="mx-auto w-3/4" />
+          {names.map((name) => {
+            return (
+              <div className="w-40 rounded-lg border-2 p-4 text-center shadow-lg">
+                <img
+                  src="/team/prof_woman1.png"
+                  className="mx-auto h-32 w-32 rounded-full"
+                />
+                <p className="mt-4 text-sm font-semibold">Leland coach</p>
+                <p className="mt-4 text-sm font-semibold">
+                  {'Coach from: ' + name}
+                </p>
+              </div>
+            )
+          })}
+          {/* <img src="/team/pros.png" className="mx-auto w-3/4" /> */}
           {/* Card 2
           <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
             <img
