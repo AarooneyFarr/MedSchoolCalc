@@ -37,7 +37,7 @@ function Hero() {
             Pre-med course planner
           </h1>
 
-          <Button className="mt-8 rounded bg-[#14B077]">
+          <Button className="mt-8 bg-[#14B077]">
             {' '}
             Schedule a free 15 minute consultation
           </Button>

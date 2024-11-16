@@ -22,9 +22,11 @@ import {
   ComboboxOptions,
   Label,
 } from '@headlessui/react'
+import { EnvelopeIcon } from '@heroicons/react/16/solid'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import { useState } from 'react'
+import { Tooltip } from 'react-tooltip'
 import medSchoolData, {
   classCategories,
   type MedSchool,
@@ -78,7 +80,7 @@ export default function Example() {
         </Label>
         <div className="relative mt-2">
           <ComboboxInput
-            className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
+            className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[#14B077] sm:text-sm/6"
             onChange={(event) => setQuery(event.target.value)}
             onBlur={() => setQuery('')}
             displayValue={(person: any) => person?.name}
@@ -96,13 +98,13 @@ export default function Example() {
                 <ComboboxOption
                   key={index}
                   value={school}
-                  className="group relative cursor-default select-none py-2 pl-8 pr-4 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white data-[focus]:outline-none"
+                  className="group relative cursor-default select-none py-2 pl-8 pr-4 text-gray-900 data-[focus]:bg-[#14B077] data-[focus]:text-white data-[focus]:outline-none"
                 >
                   <span className="block truncate group-data-[selected]:font-semibold">
                     {school.name}
                   </span>
 
-                  <span className="absolute inset-y-0 left-0 hidden items-center pl-1.5 text-indigo-600 group-data-[selected]:flex group-data-[focus]:text-white">
+                  <span className="absolute inset-y-0 left-0 hidden items-center pl-1.5 text-[#14B077] group-data-[selected]:flex group-data-[focus]:text-white">
                     <CheckIcon className="size-5" aria-hidden="true" />
                   </span>
                 </ComboboxOption>
@@ -144,9 +146,17 @@ export default function Example() {
               </span>
             )
           })}
-          <h1 className="block pb-10 pt-12 text-5xl font-bold text-gray-900">
-            Required Courses
-          </h1>
+          <div className="flex items-center justify-between">
+            <h1 className="block pb-10 pt-12 text-5xl font-bold text-gray-900">
+              Required Courses
+            </h1>
+            <div>
+              <Button>
+                <EnvelopeIcon className="size-6 pr-2" />
+                Send me my course summary
+              </Button>
+            </div>
+          </div>
           {Object.keys(classCategories).map((cat: string) => {
             return (
               <div key={cat} className="border-1 m-2 rounded-md p-4">
@@ -242,6 +252,7 @@ export default function Example() {
             )
           })}
           <Leland names={selectedSchools.map((school) => school.name)} />
+          <Tooltip id="my-tooltip" />
         </div>
       )}
     </div>
@@ -260,8 +271,11 @@ export function Pill({
   return (
     <span
       title={tooltip}
+      data-tooltip-id="my-tooltip"
+      data-tooltip-content={tooltip}
+      data-tooltip-place="top"
       className={clsx(
-        'm-1 inline-flex items-center gap-x-0.5 rounded-md px-2 py-1 text-xs font-medium text-gray-600',
+        'm-1 inline-flex cursor-default items-center gap-x-0.5 rounded-md px-2 py-1 text-xs font-medium text-gray-600',
         color == 'green' ? 'bg-green-200' : 'bg-yellow-200',
       )}
     >
@@ -301,7 +315,8 @@ function Leland({ names }: { names: string[] }) {
                 />
                 <p className="mt-4 text-sm font-semibold">Leland coach</p>
                 <p className="mt-4 text-sm font-semibold">
-                  {'Coach from: ' + name}
+                  <span className="font-normal">{'Coach from: '}</span>
+                  {name}
                 </p>
               </div>
             )
@@ -335,7 +350,7 @@ function Leland({ names }: { names: string[] }) {
         <div className="mt-12">
           <Button
             href="/schedule"
-            className="rounded-md bg-[#14B077] px-4 py-2 text-white shadow-lg"
+            className="bg-[#14B077] px-4 py-2 text-white shadow-lg"
           >
             Schedule a free 15 minute intro call
           </Button>
