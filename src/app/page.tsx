@@ -36,9 +36,12 @@ function Hero() {
           <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-900 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
             Pre-med course planner
           </h1>
+          <Button href="/schedule" className="mt-8 bg-[#14B077]"> Schedule a 15 minute consultation</Button>
           <div className="pt-12">
             <Combobox />
           </div>
+        
+
           {/* <p className="mt-8 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
             Radiant helps you sell more by revealing sensitive information about
             your customers.
