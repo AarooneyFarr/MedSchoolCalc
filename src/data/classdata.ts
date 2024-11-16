@@ -35,18 +35,18 @@ export interface MedSchool {
   requiredClasses: Class[]
 }
 
-const classCategories = {
-  biology: ['Gen Bio 1', 'Gen Bio 2', 'Genetics', 'Cell Bio', 'Physiology'],
-  chemistry: [
+export const classCategories: { [key: string]: string[] } = {
+  Biology: ['Gen Bio 1', 'Gen Bio 2', 'Genetics', 'Cell Bio', 'Physiology'],
+  Chemistry: [
     'Gen Chem 1',
     'Gen Chem 2',
     'Organic Chem 1',
     'Organic Chem 2',
     'Biochem',
   ],
-  physics: ['Physics 1', 'Physics 2'],
-  humanities: ['English Comp', 'English Lit', 'Psychology', 'Sociology'],
-  math: ['Calc 1', 'Calc 2', 'Statistics'],
+  Physics: ['Physics 1', 'Physics 2'],
+  Humanities: ['English Comp', 'English Lit', 'Psychology', 'Sociology'],
+  Math: ['Calc 1', 'Calc 2', 'Statistics'],
 }
 
 const medSchoolData: MedSchool[] = [
