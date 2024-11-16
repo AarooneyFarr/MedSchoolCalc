@@ -295,6 +295,7 @@ function Leland({ names }: { names: string[] }) {
                 className="w-40 rounded-lg border-2 p-4 text-center shadow-lg"
               >
                 <img
+                  alt="face"
                   src="/team/prof_woman1.png"
                   className="mx-auto h-32 w-32 rounded-full"
                 />
