@@ -74,7 +74,7 @@ export default function Example() {
         }}
       >
         <Label className="block text-xl font-bold text-gray-900">
-          What Medical Schools are you interested in?{' '}
+          Select the Medical Schools that you are interested in?{' '}
         </Label>
         <div className="relative mt-2">
           <ComboboxInput
@@ -241,7 +241,7 @@ export default function Example() {
               </div>
             )
           })}
-          <Leland names={selectedSchools.map(school => school.name)} />
+          <Leland names={selectedSchools.map((school) => school.name)} />
         </div>
       )}
     </div>
@@ -270,25 +270,25 @@ export function Pill({
   )
 }
 
-function Leland({names}: {names: string[]}) {
+function Leland({ names }: { names: string[] }) {
   return (
     <div>
       {/* Building a call to action at the bottom of the app to drive traffic to schedule appointments */}
-      <div className="text-center px-4">
+      <div className="px-4 text-center">
         {/* Main Heading */}
         <p className="pt-7 text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl">
           Let us help you plan your path to medical school
         </p>
 
         {/* Subheading */}
-        <p className="text-sm pt-7 font-semibold text-gray-900">
+        <p className="pt-7 text-sm font-semibold text-gray-900">
           Meet with one of our many professionals that graduated from one of
           these schools.
         </p>
 
-        <div className="flex flex-row justify-center gap-9 pt-4 flex-wrap">
-        {/* Cards Section */}
-        {names.map(name => {
+        <div className="flex flex-row flex-wrap justify-center gap-9 pt-4">
+          {/* Cards Section */}
+          {/* {names.map(name => {
           return (
           <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
             <img
@@ -298,7 +298,8 @@ function Leland({names}: {names: string[]}) {
             <p className="mt-4 text-sm font-semibold">{name}</p>
           </div>
           )
-        })}
+        })} */}
+          <img src="/team/pros.png" className="mx-auto w-3/4" />
           {/* Card 2
           <div className="border-2 rounded-lg shadow-lg p-4 text-center w-40">
             <img
@@ -325,11 +326,14 @@ function Leland({names}: {names: string[]}) {
 
         {/* Call-to-Action Button */}
         <div className="mt-12">
-          <Button href="/schedule" className="bg-[#14B077] text-white px-4 py-2 rounded-md shadow-lg">
-            Schedule an appointment
+          <Button
+            href="/schedule"
+            className="rounded-md bg-[#14B077] px-4 py-2 text-white shadow-lg"
+          >
+            Schedule a free 15 minute intro call
           </Button>
         </div>
       </div>
     </div>
-  );
+  )
 }
