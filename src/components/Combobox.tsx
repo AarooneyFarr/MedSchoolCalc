@@ -23,26 +23,20 @@ import {
 } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
+import medSchoolData from '../data/classdata'
+import Card from './Card'
 
-const people = [
-  { id: 1, name: 'Yale' },
-  { id: 2, name: 'MIT' },
-  { id: 3, name: 'Johns Hopkins' },
-  { id: 4, name: 'Harvard' },
-  { id: 5, name: 'Web MD' },
-  { id: 6, name: 'Boston' },
-  // More users...
-]
+const schools = medSchoolData
 
 export default function Example() {
   const [query, setQuery] = useState('')
-  const [selectedPerson, setSelectedPerson] = useState([])
+  const [selectedSchools, setSelectedSchools] = useState([])
 
-  const filteredPeople =
+  const filteredSchools =
     query === ''
-      ? people
-      : people.filter((person) => {
-          return person.name.toLowerCase().includes(query.toLowerCase())
+      ? schools
+      : schools.filter((school) => {
+          return school.name.toLowerCase().includes(query.toLowerCase())
         })
 
   return (
@@ -50,10 +44,10 @@ export default function Example() {
       <Combobox
         as="div"
         multiple
-        value={selectedPerson}
+        value={selectedSchools}
         onChange={(person) => {
           setQuery('')
-          setSelectedPerson(person)
+          setSelectedSchools(person)
         }}
       >
         {/* <Label className="block text-sm/6 font-medium text-gray-900">
@@ -73,16 +67,16 @@ export default function Example() {
             />
           </ComboboxButton>
 
-          {filteredPeople.length > 0 && (
+          {filteredSchools.length > 0 && (
             <ComboboxOptions className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
-              {filteredPeople.map((person) => (
+              {filteredSchools.map((school, index) => (
                 <ComboboxOption
-                  key={person.id}
-                  value={person}
+                  key={index}
+                  value={school}
                   className="group relative cursor-default select-none py-2 pl-8 pr-4 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white data-[focus]:outline-none"
                 >
                   <span className="block truncate group-data-[selected]:font-semibold">
-                    {person.name}
+                    {school.name}
                   </span>
 
                   <span className="absolute inset-y-0 left-0 hidden items-center pl-1.5 text-indigo-600 group-data-[selected]:flex group-data-[focus]:text-white">
@@ -94,7 +88,7 @@ export default function Example() {
           )}
         </div>
       </Combobox>
-      {selectedPerson.map((school: any, index) => {
+      {selectedSchools.map((school: any, index) => {
         return (
           <span
             key={index}
@@ -105,7 +99,7 @@ export default function Example() {
               type="button"
               className="group relative -mr-1 size-3.5 rounded-sm hover:bg-gray-500/20"
               onClick={() => {
-                setSelectedPerson((e: any) =>
+                setSelectedSchools((e: any) =>
                   e.filter((val: any) => val.name != school.name),
                 )
               }}
@@ -122,7 +116,20 @@ export default function Example() {
           </span>
         )
       })}
-      <div className="mt-5"></div>
+      <div className="mt-5">
+        {schools.map((school, index) => {
+          return (
+            <div key={index} className="grid grid-flow-row-dense grid-cols-2">
+              <div className="p-2">
+                <Card
+                  title={school.requiredClasses[0].name}
+                  description={'This class is required'}
+                />
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
