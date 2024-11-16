@@ -144,13 +144,13 @@ export default function Example() {
               </span>
             )
           })}
-          <h1 className="block pb-5 pt-12 text-5xl font-bold text-gray-900">
+          <h1 className="block pb-10 pt-12 text-5xl font-bold text-gray-900">
             Required Courses
           </h1>
           {Object.keys(classCategories).map((cat: string) => {
             return (
               <div key={cat} className="border-1 m-2 rounded-md p-4">
-                <div className="text-3xl font-bold uppercase text-gray-900">
+                <div className="text-3xl font-bold uppercase tracking-wide text-gray-900">
                   {cat}
                 </div>{' '}
                 <div className="grid grid-cols-2">
@@ -262,7 +262,7 @@ export function Pill({
       title={tooltip}
       className={clsx(
         'm-1 inline-flex items-center gap-x-0.5 rounded-md px-2 py-1 text-xs font-medium text-gray-600',
-        color == 'green' ? 'bg-green-400' : 'bg-yellow-400',
+        color == 'green' ? 'bg-green-200' : 'bg-yellow-200',
       )}
     >
       {title}
