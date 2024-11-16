@@ -25,7 +25,7 @@ interface Class {
   name: ClassName;
   category?: string;
   required: 'yes' | 'no' | 'recommended';
-  notes: string;
+  notes?: string;
   labRequired?: boolean;
   apAccepted?: boolean;
   alternateOptions?: string[];
@@ -774,7 +774,212 @@ const medSchoolData: MedSchool[] = [
             notes: "Not required."
           }
         ]
+    },
+    {
+        name: "University of Washington School of Medicine",
+        generalNotes: "",
+        requiredClasses: [
+          {
+            name: "Gen Bio 1",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Gen Bio 2",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Genetics",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Cell Bio",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Physiology",
+            required: "yes",
+            labRequired: false
+          },
+          {
+            name: "Gen Chem 1",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Gen Chem 2",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Organic Chem 1",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Organic Chem 2",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Biochem",
+            required: "yes",
+            labRequired: false
+          },
+          {
+            name: "Physics 1",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "Physics 2",
+            required: "yes",
+            labRequired: true
+          },
+          {
+            name: "English Comp",
+            required: "yes",
+            labRequired: false
+          },
+          {
+            name: "English Lit",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Calc 1",
+            required: "yes",
+            labRequired: false
+          },
+          {
+            name: "Calc 2",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Statistics",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Psychology",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Sociology",
+            required: "no",
+            labRequired: false
+          }
+        ]
+    },
+    {
+        name: "David Geffen School of Medicine (UCLA)",
+        generalNotes: "",
+        requiredClasses: [
+          {
+            name: "Gen Bio 1",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Gen Bio 2",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Genetics",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Cell Bio",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Physiology",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Gen Chem 1",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Gen Chem 2",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Organic Chem 1",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Organic Chem 2",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Biochem",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Physics 1",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Physics 2",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "English Comp",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "English Lit",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Calc 1",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Calc 2",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Statistics",
+            required: "recommended",
+            labRequired: false
+          },
+          {
+            name: "Psychology",
+            required: "no",
+            labRequired: false
+          },
+          {
+            name: "Sociology",
+            required: "no",
+            labRequired: false
+          }
+        ]
     }
+      
+      
+
       
 ];
 
