@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   return (
-    <div className="relative">
+    <div className="relative text-white">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
       <Container className="relative">
         {/* <Navbar
@@ -33,8 +33,8 @@ function Hero() {
           }
         /> */}
         <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 md:pb-48 md:pt-32">
-          <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-gray-950 sm:text-8xl/[0.8] md:text-9xl/[0.8]">
-            Find your med school
+          <h1 className="font-display text-balance text-6xl/[0.9] font-medium tracking-tight text-white sm:text-8xl/[0.8] md:text-9xl/[0.8]">
+            Pre-med course planner
           </h1>
           <div className="pt-12">
             <Combobox />
