@@ -153,7 +153,7 @@ export default function Example() {
                 <div className="text-3xl font-bold uppercase text-gray-900">
                   {cat}
                 </div>{' '}
-                <div className="grid">
+                <div className="grid grid-cols-2">
                   {Array.from(requiredClassSet).map((className, index) => {
                     const schoolSet = requiredClassMap.get(className)!
                     const schoolsThatRequire: string[] = []
@@ -241,6 +241,7 @@ export default function Example() {
               </div>
             )
           })}
+          <Leland />
         </div>
       )}
     </div>
@@ -271,29 +272,37 @@ export function Pill({
 
 function Leland() {
   return (
-
     <div>
-    {/*building a call to action at the bottom of the app to drive traffic to schedule appointments*/}
-    <div className ="" >
-      <p className="text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl pt-7">
-        Let us help you plan your path to medical school
-      </p>
-      <div>
-        {/*a list of images in a row showing "professionals associated with Leland*/}
-      <p className="text-s font-semibold text-gray-900 pt-7">
-        Meet with one of our many professionals that graduated from one of these schools.
-      </p>
-      <div className="flex flex-row gap-4 pt-4">
-          <img src="/team/prof_woman1.png" className="rounded-full h-32 w-32" />
-          <img src="/team/prof-man1.png" className="rounded-full h-32 w-32" />
-          <img src="/team/prof-woman2.png" className="rounded-full h-32 w-32" />
-          <img src="/team/prof-man2.png" className="rounded-full h-32 w-32" />
+      {/*building a call to action at the bottom of the app to drive traffic to schedule appointments*/}
+      <div className="">
+        <p className="pt-7 text-2xl font-semibold text-gray-900 sm:text-3xl md:text-4xl">
+          Let us help you plan your path to medical school
+        </p>
+        <div>
+          {/*a list of images in a row showing "professionals associated with Leland*/}
+          <p className="text-s pt-7 font-semibold text-gray-900">
+            Meet with one of our many professionals that graduated from one of
+            these schools.
+          </p>
+          <div className="flex flex-row gap-4 pt-4">
+            <img
+              src="/team/prof_woman1.png"
+              className="h-32 w-32 rounded-full"
+            />
+            <img src="/team/prof-man1.png" className="h-32 w-32 rounded-full" />
+            <img
+              src="/team/prof-woman2.png"
+              className="h-32 w-32 rounded-full"
+            />
+            <img src="/team/prof-man2.png" className="h-32 w-32 rounded-full" />
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
+          <Button href="/schedule" className="bg-[#14B077]">
+            Schedule an appointment
+          </Button>
+        </div>
       </div>
     </div>
-    <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row" >
-      <Button href="/schedule" className='bg-[#14B077]'>Schedule an appointment</Button>
-    </div>
-  </div>
-</div>
   )
 }
